@@ -2,12 +2,11 @@
 
 #define STATIC 0
 
-static byte mymac[] = { 0x50,0x26,0x90,0x9a,0xd9,0xf9 };
+static byte mymac[] = { 0x00,0x00,0x00,0x00,0x00,0x00 };
 
 int kosteus;
 
-const char website[] PROGMEM = "kelokatu.hacked.jp";
-//const char website[] PROGMEM = "random.ikioma.org";
+const char website[] PROGMEM = "##";
 
 uint32_t timer;
 byte Ethernet::buffer[700];
@@ -50,9 +49,7 @@ ether.packetLoop(ether.packetReceive());
 void updateKosteus ( int kosteus )
 {
  byte sd = stash.create();
- //stash.print("GET testti.php?");
- stash.print("GET /~nkuokka/hackday/firebaseTest.php?");
- //stash.print("GET /iotkukka/firebaseTest.php?");
+ //stash.print("GET test.php?");
         stash.print("humidity=");
         stash.print(kosteus);
         stash.print(" HTTP/1.0 \r\n");
